@@ -1,0 +1,16 @@
+{% extends 'store/main.html' %}
+{% block title %} {{product.name}} -- Cart{% endblock %}
+{% block body %}
+<div class="container my-4">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+       <img  src="/images//{{product.imageURL}}" width="233px" height="385px">
+    </div>
+        </div>
+    <div class="col-md-8">
+        <h5>{{product.name}}</h5>
+    </div>
+        </div>
+</div>
+{% endblock %}

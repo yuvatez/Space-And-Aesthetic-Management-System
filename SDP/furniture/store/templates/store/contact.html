@@ -1,0 +1,29 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+     <div class="row">
+          <div class="col-lg-6">
+               <div class="box-element" id="form-wrapper">
+                    <form id="form">
+                         <div id="user-info">
+                              <a  class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190;Bact to store</a>
+                              <hr>
+                              <p>Customize</p>
+                              <hr>
+                              <div style="margin:80px">
+          <h4>Customize your furniture</h4>
+          <p>
+               You can customize your furniture from here.Please fill appropriate blanks correctly and if you want any additional you can type them in the message box.We will mail the furniture model to mail and we will add it to the store were you can buy the model
+          </p>
+          <form method="post">
+        {% csrf_token %}
+            {{form.as_p}}
+            <input  style="float:right; margin:5px;" class="btn btn-success" type="submit" value="submit" id="contactGo">
+        </form>
+    </div>
+               </div>
+               </div>
+          </div>
+          <div style="flex:1"><p>{{item.get_total|floatformat:2}}</p></div>
+     </div>
+{% endblock content %}

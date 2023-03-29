@@ -1,0 +1,11 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+{% if products %}
+{% for product in products %}
+    <a href="{% url 'store' id=product.id  %}">
+    <img src="{{product.imageURL}}" alt="No Image"></a>
+    <p>{{item.product.name}}</p>
+    <p>{{item.product.price|floatformat:2}}</p>   
+{% endfor %}
+{% endif %}
